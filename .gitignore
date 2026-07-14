@@ -1,0 +1,10 @@
+# Qt/C++ specific
+*.o
+*.obj
+*.exe
+*.so
+*.a
+*.user
+build-*/
+.qmake.stash
+.qtc_clangd/
