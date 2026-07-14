@@ -1,4 +1,4 @@
-*** General Information ***
+### General Information
 This code is based on work origninally created as part of an exam in a class called "Ecological Modelling with C++" 
 The exam was to:
 1: Find an ecological question (get it approved)
@@ -6,19 +6,15 @@ The exam was to:
 I did not change much about the readme besides removing some details and adding this lines.
 
 
-*************************
-***About this program ***
-*************************
+### About this program 
 
 Author: Jonas Willms
 
-*** RESEARCH QUESTION ***
-
+Research question:
 How does herbivory effect the composition of coral reefs?
 
 
-*** BACKGROUND INFORMATION ***
-
+#### BACKGROUND INFORMATION
 Understanding the dynamics of coral reefs is of utmost importance to preserving them.
 Most reefs are dominated either by corals or large, fleshy macroalage.
 More and more reefs are and have been observed to shift, from once coral dominated states towards states, dominated by macroalage.
@@ -26,14 +22,19 @@ Research shows a strong correlation between corals and the presence of herbivory
 Here we want to investigate this phase separation w.r.t. the presence of herbivores, keeping algae at bay.
 
 
-*** ABOUT THIS PROGRAM ***
+### ABOUT THIS PROGRAM 
 
-* What does the program do? *
+#### What does the program do?
 This program simulates a simplified reef, consisting of 4 different constituents:
+
 Background: Essentially empty/freshly grazed areas
+
 Turf algae: Small and juvenile algae of low height
+
 Macroalage: Large, fleshy algae that directly compete with corals
+
 Corals: Corals
+
 
 Herbivory is implemented as a constant grazing pressure, representing the area that can maximally be grazed per year.
 Destruction events/catastrophes can be included as well, as destruction events (for example through hurricanes or bleaching events) might shift transition points.
@@ -52,16 +53,18 @@ And external dynamics:
 
 Additionally, both algae can be "eaten" due to the grazing pressure and everything can be destroyed by "catrastrophic events".
 
-* How to use the program? *
+#### How to use the program?
 After starting the program, a window opens where the different base functions of the simulation class can be explored.
 
 One can initialize a reef of a size defined in the code.
-    - The sizes can be varied inside the mainwindow and secondwindow setup.
-    - The program should adjust well to that - I chose reasonable values for computation times.
-    - As they are not necessarily of significant interest here, I chose to not make them accessible during runtime.
+ - The sizes can be varied inside the mainwindow and secondwindow setup.
+ - The program should adjust well to that - I chose reasonable values for computation times.
+ - As they are not necessarily of significant interest here, I chose to not make them accessible during runtime.
+    
 After initializing, one can vary the herbivory and destruction using the sliders on the bottom.
-    - The herbivory is in percent, representing the area that can maximally be grazed, i.e. how many grid cells will be visited per year and set back to the background if algae are present.
-    - The destruction is in percent, representing the probability that a grid cell, regardless of the current state, is setback to background during a catastrophe.
+- he herbivory is in percent, representing the area that can maximally be grazed, i.e. how many grid cells will be visited per year and set back to the background if algae are present.
+- The destruction is in percent, representing the probability that a grid cell, regardless of the current state, is setback to background during a catastrophe.
+    
 If the sliders are not adjusted, both are initialized with 0%, all possible slider values are somewhat valid (yes, more than 100% of the reef can be visited by fishes per year).
 To evolve the reef, one can perform a single time step or 10 to speed things up.
     - The default time step is set in the init function of the simulation class and can be varied there - it is not necessarily intended - If I did not forget anything it should not cause problems.
@@ -84,7 +87,7 @@ Here, a regular catastrophe event with a given destruction probability can be ad
 Whilst not accurately, this can represent something like an expected frequency of hurricanes.
 
 
-* What output is produced? *
+#### What output is produced?
 
 Produced is a snapshot of the reef structure after a number of time steps.
 For the second window, a graph, showing the dominance of corals to macroalage for different herbivory scenarios, is produced.
@@ -92,7 +95,7 @@ If it is close to 1 corals dominate, close to 0, macroalage dominate.
 Also, the final state of each complete evaluation is displayed.
 
 
-* How could the program be used? *
+#### How could the program be used?
 
 To answer the Research question, one should average over long times and many runs - qualitatively it is answerable with this code.
 This shows how the system tends to algae or coral dominated states, in dependence of the herbivory.
@@ -105,27 +108,31 @@ Whilst the parameters are educated guesses and seem somewhat reasonable, detaile
 Last but not least, different types of corals could be simulated to archive higher realism.
 
 
-*** Structure ***
+#### Structure
 The project is in multiple files.
 
 simulation:
-    The simulation class is the heart of the project.
-    It implements a simulation object that describes the reef as a 2d grid on which different functions operate on to simulate the evolution of the reef.
-    It is mostly self-contained but needs additional functions implemented in "functions".
+ - The simulation class is the heart of the project.
+ - It implements a simulation object that describes the reef as a 2d grid on which different functions operate on to simulate the evolution of the reef.
+ - It is mostly self-contained but needs additional functions implemented in "functions".
+    
 functions:
-    Here, additional functions (that are used by the simulation) that are not specific to the declaration and definitions in the simulation class are implemented.
-    For example, a deep first search algorithm on a 2d array is implemented in here.
-    The DFS works on any 2d array with 1s and 0s, no need to interpret anything as corals etc. -> therefore it is not in "simulation".
+ - Here, additional functions (that are used by the simulation) that are not specific to the declaration and definitions in the simulation class are implemented.
+ - For example, a deep first search algorithm on a 2d array is implemented in here.
+ - The DFS works on any 2d array with 1s and 0s, no need to interpret anything as corals etc. -> therefore it is not in "simulation".
+    
 mainwindow:
-    Essentially used to show how the simulation object works.
+ - Essentially used to show how the simulation object works.
+    
 secondwindow:
-    Used to do a little parameter search.
+ - Used to do a little parameter search.
+    
 tests:
-    A test for the implemented DFS algorithm.
-    It just tries some predefined example cases and checks that they work.
+ - A test for the implemented DFS algorithm.
+ - It just tries some predefined example cases and checks that they work.
 
 
-*** process and usage of AI ***
+#### process and usage of AI 
 
 I pre wrote some basics version of a simulation algorithm in python to check that it produces somewhat reasonable output.
 Then I did implement it in c++ as it's own class and "went with the flow" for adding more functionallites.
@@ -137,12 +144,12 @@ Most information was gained by lecture material, documentation or previouse know
 During later iterations of this AI was used in a similar manner, including ChatGPT 5 and Gemini.
 
 
-*** Other ***
+#### Other
 To get back from the second to the first window, just close it.
 !!!But!!! If the simulations are still running in the second window, this doesn't work and the programm will continue in the background and eventually terminate.
 
 
-*** References ***
+#### References
 Status and Trends of Caribbean Coral Reefs: 1970-2012 (Jeremy Jackson, Mary K. Donovan, Katie L. Cramer), 2014, https://www.researchgate.net/publication/264157662_Status_and_Trends_of_Caribbean_Coral_Reefs_1970-2012
 Thresholds and the resilience of Caribbean coral reefs (Peter J. Mumby, Alan Hastings, Helen J. Edwards), 2007, https://www.nature.com/articles/nature06252
 Coral reef community dynamics and disturbance: a simulation model (O. Langmead, C. Sheppard), 2004, https://www.sciencedirect.com/science/article/abs/pii/S0304380003004812
