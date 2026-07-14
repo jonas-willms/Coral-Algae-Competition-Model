@@ -1,8 +1,9 @@
-*** This is the original readme submitted with the code as an exam in a class called "Ecological Modelling with C++" ***
+*** General Information ***
+This code is based on work origninally created as part of an exam in a class called "Ecological Modelling with C++" 
 The exam was to:
 1: Find an ecological question (get it approved)
 2: Implement and comment your code
-I did not change the readme besides removing my "Matrikelnummer" and adding this lines.
+I did not change much about the readme besides removing some details and adding this lines.
 
 
 *************************
@@ -10,7 +11,6 @@ I did not change the readme besides removing my "Matrikelnummer" and adding this
 *************************
 
 Author: Jonas Willms
-Matrikelnummer: --------
 
 *** RESEARCH QUESTION ***
 
@@ -51,7 +51,6 @@ And external dynamics:
     Overgrowth from neighboring cells and protection of large coral colonies from overgrowth, as they are rarely overgrown in real world observations.
 
 Additionally, both algae can be "eaten" due to the grazing pressure and everything can be destroyed by "catrastrophic events".
-- I could go into a lot more details, but I think this in combination with the code should suffice.
 
 * How to use the program? *
 After starting the program, a window opens where the different base functions of the simulation class can be explored.
@@ -135,9 +134,7 @@ I used it a bit more in the end to get a legend for the main window as I did not
 I recicled some of the code of the lecture for plotting.
 Most information was gained by lecture material, documentation or previouse knowledge from other programming laguages.
 
-My style might be a bit inconsistent as this project was written scattered in time due to other exams.
-Initially I tried hard to stick with only camelCase naming conventions, but personally I'm more used to using "_" and towards the end I accepted that and just stuck to my usual habits.
-Whilst not 100% conventional for c++ I hope everything is at least (named) unambiguously.
+During later iterations of this AI was used in a similar manner, including ChatGPT 5 and Gemini.
 
 
 *** Other ***
@@ -146,7 +143,6 @@ To get back from the second to the first window, just close it.
 
 
 *** References ***
-
 Status and Trends of Caribbean Coral Reefs: 1970-2012 (Jeremy Jackson, Mary K. Donovan, Katie L. Cramer), 2014, https://www.researchgate.net/publication/264157662_Status_and_Trends_of_Caribbean_Coral_Reefs_1970-2012
 Thresholds and the resilience of Caribbean coral reefs (Peter J. Mumby, Alan Hastings, Helen J. Edwards), 2007, https://www.nature.com/articles/nature06252
 Coral reef community dynamics and disturbance: a simulation model (O. Langmead, C. Sheppard), 2004, https://www.sciencedirect.com/science/article/abs/pii/S0304380003004812
